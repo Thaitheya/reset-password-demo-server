@@ -10,7 +10,12 @@ connectDB();
 
 const app = express();
 
-app.use(cors());
+app.use(cors(
+    {
+        origin: "https://resetpassword01.netlify.app/",
+        credentials: true
+    }
+));
 app.use(bodyParser.json());
 app.use("/api/auth", authRoutes);
 
