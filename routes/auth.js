@@ -79,6 +79,7 @@ router.post("/forgot-password", async (req, res) => {
     });
 
     const resetLink = `https://resetpassword01.netlify.app/reset-password/${resetToken}`;
+    console.log("Reset Link:", resetLink);
     await transporter.sendMail({
       from: process.env.EMAIL,
       to: user.email,
