@@ -7,15 +7,8 @@ const cors = require("cors");
 
 dotenv.config();
 connectDB();
-
 const app = express();
-
-app.use(cors(
-    {
-        origin: "https://resetpassword01.netlify.app/",
-        credentials: true
-    }
-));
+app.use(cors({ origin: '*' }));
 app.use(bodyParser.json());
 app.use("/api/auth", authRoutes);
 
